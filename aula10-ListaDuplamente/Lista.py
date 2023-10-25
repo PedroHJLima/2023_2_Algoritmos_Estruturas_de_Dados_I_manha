@@ -45,19 +45,12 @@ class Lista:
             self.inicio = no
             self.final = no
             self.tamanho += 1
-        elif valor < self.inicio:
-            self.inicio = no
-            no.proximo = aux
-            aux.anterior = no
-
         else:
-            while aux.dado < valor:
-                #inicio/anterior é menor
-                print(aux.dado,valor)
+            while aux.proximo:
+                print(aux)
                 aux = aux.proximo
-            else:
-                #inicio/anterior é maior que o valor
-                aux.proximo = no
+            aux.proximo = no
+            self.tamanho += 1
         self.imprimir()
 
     def imprimir(self):
