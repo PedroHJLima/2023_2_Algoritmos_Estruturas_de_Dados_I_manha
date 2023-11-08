@@ -4,15 +4,18 @@ class Pilha():
     def __init__(self):
         self.topo = None
 
-    def adicionar(self,valor):
-        nodo = Nodo(valor)
+    def adicionar(self,valor,autor,pag):
+        nodo = Nodo(valor,autor,pag)
         topo = self.topo
         self.topo = nodo
         nodo.proximo = topo
 
     def remover(self):
-        print("Removido: "+ str(self.topo))
-        self.topo = self.topo.proximo
+        if(self.topo != None):
+            print("Removido: "+ str(self.topo))
+            self.topo = self.topo.proximo
+        else:
+            print("Nenhum elemento para excluir!")
 
     def imprimir(self):
         print("-------")
@@ -25,3 +28,5 @@ class Pilha():
                 nodo = nodo.proximo
 
         print("-------")
+
+        #Adicionar nao precisa do if no caso do python.

@@ -1,7 +1,9 @@
 class Nodo:
-    def __init__(self,valor):
-        self.dado = valor
+    def __init__(self,nome,autor,n_pag):
+        self.nome = nome
+        self.autor = autor
+        self.pag = n_pag
         proximo = None
 
     def __str__(self):
-        return "Nó: " + str(self.dado)
+        return "Nome: " + self.nome+" Autor: "+self.autor+" Páginas: "+str(self.pag)
